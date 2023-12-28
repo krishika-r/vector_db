@@ -1,0 +1,14 @@
+# # OpenAI connection parameters
+connection_params:
+  # API type - Can be openai or azure
+  api_type: "azure"
+  # End point of Azure OpenAI resource group
+  api_base: "your-api"
+  # API version. Search for microsoft/ openai docs for getting API version corresponding to the model version that you deployed in the Azure OpenAI resource group
+  api_version: "your-api-version"
+  # API key.
+  api_key: "your-api-key"
+  deployment: "text-embedding-ada-002"
+  model: "text-embedding-ada-002"
+  chunk_size: 256
+  max_retries: 3

@@ -1,0 +1,15 @@
+path:
+  # Root folder of the project
+  parent: ../..
+  # Path where the input data, db files, output folder (will be created in the code) are saved
+  input_data_path: ${path.parent}/data/input_folder
+  # Output path where results will be saved
+  output_path: ${path.parent}/data/output_folder
+  # Experiment name. Sub folder inside output_path will be created with this name. All results of runs will be saved inside `output_path/exp_name`
+  exp_name: vector_db_exp1
+  logger: 
+        path: ${path.parent}/log/${path.exp_name}
+        file_name: run.log
+
+  doc_extraction_output_flag: True
+

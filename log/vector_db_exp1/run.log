@@ -1,0 +1,17 @@
+2023-12-27 21:16:24 - INFO - STEP1: Text extraction from pdf started
+2023-12-27 21:16:25 - INFO - Extracted text for Cancer.Net - Non Small Cell Stages saved to ../../log/vector_db_exp1\extracted_text\Cancer.Net - Non Small Cell Stages_output.docx
+2023-12-27 21:16:26 - INFO - Extracted text for WebMd - Stages of Lung Cancer saved to ../../log/vector_db_exp1\extracted_text\WebMd - Stages of Lung Cancer_output.docx
+2023-12-27 21:16:26 - INFO - Dataframe saved to ../../log/vector_db_exp1
+2023-12-27 21:16:26 - INFO - STEP1 Completed
+2023-12-27 21:16:35 - INFO - STEP2: Chunk generation started
+2023-12-27 21:16:35 - INFO - Splitter Method: RecursiveCharacterTextSplitter
+2023-12-27 21:16:35 - INFO - Saved the chunk to file ../../log/vector_db_exp1\chunks\Cancer.Net - Non Small Cell Stages.docx
+2023-12-27 21:16:35 - INFO - Saved the chunk to file ../../log/vector_db_exp1\chunks\WebMd - Stages of Lung Cancer.docx
+2023-12-27 21:16:35 - INFO - Exported the summary dataframe as summary.csv to path ../../log/vector_db_exp1\doc_summary
+2023-12-27 21:16:35 - INFO - STEP2 Completed
+2023-12-27 21:16:36 - INFO - STEP3: Embedding generation and storage step started
+2023-12-27 21:16:36 - DEBUG - Embedding Type: HuggingFaceEmbeddings
+2023-12-27 21:16:36 - DEBUG - Embedding Model: all-MiniLM-L6-v2
+2023-12-27 21:16:38 - INFO - Generated the embeddings of the chunks
+2023-12-27 21:16:48 - ERROR - Unable to connect to vector database
+2023-12-27 21:16:48 - ERROR - Error: General Exception type: Exception, Message: Connection Failed

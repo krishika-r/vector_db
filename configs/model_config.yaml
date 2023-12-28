@@ -1,0 +1,49 @@
+extract_params:
+  parser: "PyMuPDFLoader" # PyPDFLoader, PyMuPDFLoader, UnstructuredPDFLoader, PyPDFium2Loader, PDFMinerLoader, PDFPlumberLoader, PDFMinerPDFasHTMLLoader,UnstructuredFileLoader
+  parser_dict: {
+        "UnstructuredPDFLoader": UnstructuredPDFLoader,
+        "PyPDFium2Loader": PyPDFium2Loader,
+        "PyMuPDFLoader": PyMuPDFLoader,
+        "PDFMinerLoader": PDFMinerLoader,
+        "PyPDFLoader": PyPDFLoader,
+        "PDFPlumberLoader": PDFPlumberLoader,
+        "PDFMinerPDFasHTMLLoader": PDFMinerPDFasHTMLLoader,
+        "UnstructuredFileLoader":UnstructuredFileLoader
+        }
+
+
+embedding_params:
+  embedding_type: "HuggingFaceEmbeddings"  # HuggingFaceInstructEmbeddings, openai ,SentenceTransformer, HuggingFaceEmbeddings
+  embedding_model: "all-MiniLM-L6-v2"     # [HuggingFaceInstructEmbeddings: hkunlp/instructor-xl,hkunlp/instructor-large], [HuggingFaceEmbeddings : all-MiniLM-L6-v2],[SentenceTransformer : paraphrase-MiniLM-L6-v2]
+  score_factor: 
+  dimension: 384
+
+chunk_params:
+  chunk_size: 2500
+  chunk_overlap: 100
+  text_splitter: "TikTokenSplitter" # SentenceTransformersTokenTextSplitter, RecursiveCharacterTextSplitter, TikTokenSplitter
+  save_summary : True
+  summary_file_name : "summary.csv"
+
+milvus_params:
+  connection: 
+    alias: "default"
+    host: "localhost"
+    port: 19530
+    user: "root"
+    password: "Milvus"
+  
+  collection: 
+    name: "final_collection"
+    description: "Collection to store the embeddings"
+
+  index_params: {'index_type': 'IVF_FLAT','metric_type': 'COSINE','params': {'nlist': 1024}}
+  
+search_vector_params:
+  anns_field: "embeddings"
+  search_params : {"metric_type": "COSINE", "params": {"nprobe": 10}}
+  limit: 3
+  threshold: 0.70
+  expr: 
+  output_fields: ['page_content']
+  consistency_level: "Strong"

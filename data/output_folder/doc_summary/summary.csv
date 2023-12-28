@@ -1,0 +1,3 @@
+file_path,page_count,chunk_counts,chunk_method
+../../data/input_folder\Cancer.Net - Non Small Cell Stages.pdf,4,6,RecursiveCharacterTextSplitter
+../../data/input_folder\WebMd - Stages of Lung Cancer.pdf,3,4,RecursiveCharacterTextSplitter
